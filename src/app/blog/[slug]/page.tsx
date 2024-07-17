@@ -1,11 +1,9 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import ContentWrapper from '@/components/content-wrapper';
 import PostBody from '@/components/post-body';
 import PostHeader from '@/components/post-header';
-import PostWrapper from '@/components/post-wrapper';
-import ScrollProgress from '@/components/scroll-progress';
-import ScrollToTop from '@/components/scroll-to-top';
 import { getPost, getPosts } from '@/utils/posts';
 
 interface PostPageProps {
@@ -20,16 +18,10 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <>
-      <ScrollProgress />
-
-      <PostWrapper>
-        <PostHeader post={post} />
-        <PostBody post={post} />
-      </PostWrapper>
-
-      <ScrollToTop />
-    </>
+    <ContentWrapper>
+      <PostHeader post={post} />
+      <PostBody post={post} />
+    </ContentWrapper>
   );
 }
 

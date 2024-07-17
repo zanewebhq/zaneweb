@@ -59,8 +59,8 @@ export default function Header() {
         <Navigation $isWhite={!isHomePage}>
           <NavigationGroup>
             <NavigationLink href="/">Home</NavigationLink>
+            <NavigationLink href="/uses">Uses</NavigationLink>
           </NavigationGroup>
-
           <SocialLinks />
         </Navigation>
       </InnerWrapper>
