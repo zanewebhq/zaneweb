@@ -25,7 +25,7 @@ export default function NavigationMobile({ isWhite }: NavigationMobileProps) {
   return (
     <Wrapper>
       <HamburgerButton $isWhite={!isWhite || isOpen} onClick={handleToggle}>
-        {isOpen ? <MdClose /> : <MdMenu />}
+        {isOpen ? <MdClose title="Open menu" /> : <MdMenu title="Close menu" />}
       </HamburgerButton>
 
       {isOpen && (
