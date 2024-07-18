@@ -3,15 +3,17 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)<{ $forceLight?: boolean }>`
   border-bottom: 1px solid;
   text-decoration: none;
   transition-property: color, border-color, background, box-shadow,
     border-radius;
   transition-duration: 200ms;
   box-shadow: 0 0 0 0.2rem transparent;
-  color: var(--color-link-text);
-  border-color: var(--color-link-text);
+  color: ${({ $forceLight }) =>
+    $forceLight ? 'var(--color-secondary-200)' : 'var(--color-link-text)'};
+  border-color: ${({ $forceLight }) =>
+    $forceLight ? 'var(--color-secondary-200)' : 'var(--color-link-text)'};
 
   &:hover,
   &:focus {

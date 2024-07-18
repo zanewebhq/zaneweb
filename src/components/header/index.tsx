@@ -5,21 +5,16 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-import { SocialLinks } from '@/components/social-links';
+import NavigationDesktop from '@/components/navigation-desktop';
+import NavigationMobile from '@/components/navigation-mobile';
 
-import {
-  ImageWrapper,
-  InnerWrapper,
-  Navigation,
-  NavigationGroup,
-  NavigationLink,
-  Wrapper,
-} from './styles';
+import { ImageWrapper, InnerWrapper, Wrapper } from './styles';
 
 export default function Header() {
   const pathname = usePathname();
   const isHomePage = pathname === '/';
   const [isDarMode, setIsDarkMode] = useState(false);
+  const brandColor = isHomePage || isDarMode ? 'WHITE' : 'PRIMARY';
 
   const handleMode = (event: any) => {
     setIsDarkMode(event.matches);
@@ -42,11 +37,7 @@ export default function Header() {
         <Link href="/" aria-label="Home">
           <ImageWrapper>
             <Image
-              src={
-                isHomePage || isDarMode
-                  ? '/images/brand/LOGO_WHITE.webp'
-                  : '/images/brand/LOGO_PRIMARY.webp'
-              }
+              src={`/images/brand/LOGO_${brandColor}.webp`}
               alt=""
               width={88}
               height={80}
@@ -56,13 +47,8 @@ export default function Header() {
           </ImageWrapper>
         </Link>
 
-        <Navigation $isWhite={!isHomePage}>
-          <NavigationGroup>
-            <NavigationLink href="/">Home</NavigationLink>
-            <NavigationLink href="/uses">Uses</NavigationLink>
-          </NavigationGroup>
-          <SocialLinks />
-        </Navigation>
+        <NavigationMobile isWhite={isHomePage} />
+        <NavigationDesktop isWhite={isHomePage} />
       </InnerWrapper>
     </Wrapper>
   );

@@ -13,6 +13,6 @@ export const ProgressBar = styled.div.attrs<{ $scrollProgress: number }>(
   width: 100%;
   height: 0.25rem;
   background: var(--color-text-200);
-  z-index: 1000;
+  z-index: 10;
   transform-origin: left center;
 `;

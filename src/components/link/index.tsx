@@ -6,9 +6,17 @@ interface LinkProps {
   href?: string;
   children?: ReactNode;
   className?: string;
+  onClick?: () => void;
+  forceLight?: boolean;
 }
 
-export default function Link({ href = '', children, className }: LinkProps) {
+export default function Link({
+  href = '',
+  children,
+  className,
+  onClick,
+  forceLight,
+}: LinkProps) {
   const isInternal = href && href.startsWith('/');
 
   const props = isInternal
@@ -16,7 +24,13 @@ export default function Link({ href = '', children, className }: LinkProps) {
     : { target: '_blank', rel: 'noopener noreferrer' };
 
   return (
-    <StyledLink href={href} className={className} {...props}>
+    <StyledLink
+      href={href}
+      className={className}
+      onClick={onClick}
+      $forceLight={forceLight}
+      {...props}
+    >
       {children}
     </StyledLink>
   );
