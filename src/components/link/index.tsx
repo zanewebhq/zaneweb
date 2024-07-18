@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import { StyledLink } from './styles';
 
-interface LinkProps {
+export interface LinkProps {
   href?: string;
   children?: ReactNode;
   className?: string;

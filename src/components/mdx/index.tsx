@@ -2,7 +2,7 @@ import type { MDXComponents } from 'mdx/types';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import rehypePrettyCode from 'rehype-pretty-code';
 
-import Link from '@/components/link';
+import Link, { LinkProps } from '@/components/link';
 import PostImage from '@/components/post-image';
 import { PostImage as PostImageType } from '@/utils/posts';
 
@@ -37,7 +37,7 @@ const mdxComponents: MDXComponents = {
   // blockquote: (props) => <BlockQuote {...props} />,
   // code: (props) => <Code {...props} />,
   // pre: (props) => <Pre {...props} />,
-  a: (props) => <Link {...props} />,
+  a: (props) => <Link {...(props as LinkProps)} />,
   img: (props) => <PostImage {...(props as PostImageType)} />,
   // table: (props) => <Table {...props} />,
   // th: (props) => <TableHead {...props} />,
