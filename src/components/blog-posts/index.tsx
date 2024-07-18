@@ -1,10 +1,9 @@
-import Link from '@/components/link';
 import PostCard from '@/components/post-card';
 import { getPosts } from '@/utils/posts';
 
-import { Heading, LinkWrapper, Posts, Wrapper } from './styles';
+import { Heading, Posts, Wrapper } from './styles';
 
-export default async function LatestPosts() {
+export default async function BlogPosts() {
   const posts = await getPosts();
 
   if (!posts) return null;
@@ -14,18 +13,13 @@ export default async function LatestPosts() {
   });
 
   return (
-    <Wrapper id="latestPosts">
-      <Heading>Latest posts</Heading>
-
+    <Wrapper>
+      <Heading>Blog</Heading>
       <Posts>
         {sortedPosts.map((post) => (
           <PostCard post={post} key={post.slug} />
         ))}
       </Posts>
-
-      <LinkWrapper>
-        <Link href="/blog">View all posts</Link>
-      </LinkWrapper>
     </Wrapper>
   );
 }

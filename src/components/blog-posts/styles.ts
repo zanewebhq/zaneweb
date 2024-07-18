@@ -31,9 +31,3 @@ export const Posts = styled.div`
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 `;
-
-export const LinkWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-`;

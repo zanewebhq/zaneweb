@@ -25,13 +25,16 @@ export default function NavigationMobile({ isWhite }: NavigationMobileProps) {
   return (
     <Wrapper>
       <HamburgerButton $isWhite={!isWhite || isOpen} onClick={handleToggle}>
-        {isOpen ? <MdClose title="Open menu" /> : <MdMenu title="Close menu" />}
+        {isOpen ? <MdClose title="Close menu" /> : <MdMenu title="Open menu" />}
       </HamburgerButton>
 
       {isOpen && (
         <Navigation>
           <Link href="/" onClick={handleToggle}>
             Home
+          </Link>
+          <Link href="/blog" onClick={handleToggle}>
+            Blog
           </Link>
           <Link href="/uses" onClick={handleToggle}>
             Uses
