@@ -11,9 +11,9 @@ export const StyledLink = styled(Link)<{ $forceLight?: boolean }>`
   transition-duration: 200ms;
   box-shadow: 0 0 0 0.2rem transparent;
   color: ${({ $forceLight }) =>
-    $forceLight ? 'var(--color-secondary-200)' : 'var(--color-link-text)'};
+    $forceLight ? 'var(--color-white)' : 'var(--color-link-text)'};
   border-color: ${({ $forceLight }) =>
-    $forceLight ? 'var(--color-secondary-200)' : 'var(--color-link-text)'};
+    $forceLight ? 'var(--color-white)' : 'var(--color-link-text)'};
 
   &:hover,
   &:focus {

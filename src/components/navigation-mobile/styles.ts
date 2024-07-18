@@ -42,7 +42,7 @@ export const Navigation = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  background-color: var(--color-primary-100);
+  background-color: var(--color-background-200);
 `;
 
 export const SocialsWrapper = styled.div`

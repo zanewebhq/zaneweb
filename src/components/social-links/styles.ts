@@ -17,11 +17,11 @@ export const IconLink = styled.a`
   &:focus,
   &:hover {
     outline: none;
-    color: var(--color-primary-600);
+    color: var(--color-primary-400);
     cursor: pointer;
   }
 
   &:active {
-    color: var(--color-primary-400);
+    color: var(--color-primary-600);
   }
 `;
