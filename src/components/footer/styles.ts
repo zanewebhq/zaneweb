@@ -9,7 +9,7 @@ export const Wrapper = styled.footer`
   flex-direction: column;
   gap: 1.5rem;
   padding: 2rem 1rem;
-  background-color: var(--color-background-200);
+  background-color: var(--color-bg-200);
 `;
 
 export const Text = styled.p`

@@ -1,9 +1,5 @@
 import { css } from 'styled-components';
 
-import { PostCategory } from '@/utils/posts';
-
-type ColorVariant = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
-
 type TypographyVariant = 1 | 2 | 3 | 4 | 5;
 
 interface TypographyProps {
@@ -20,13 +16,6 @@ type BrandRecord = {
 };
 
 interface Theme {
-  colors: {
-    primary: Record<ColorVariant, string>;
-    secondary: Record<ColorVariant, string>;
-    white: string;
-    black: string;
-    categories: Record<PostCategory, string>;
-  };
   typography: {
     heading: Record<TypographyVariant, TypographyProps>;
     body: Record<TypographyVariant, TypographyProps>;
@@ -46,36 +35,6 @@ interface Theme {
 }
 
 const theme: Theme = {
-  colors: {
-    primary: {
-      100: '#F4F8FF',
-      200: '#CBDCF7',
-      300: '#9DBBEB',
-      400: '#6E9CE4',
-      500: '#4582E1',
-      600: '#3769B6',
-      700: '#2A4F88',
-      800: '#1C3459',
-      900: '#101C30',
-    },
-    secondary: {
-      100: '#F4F0FC',
-      200: '#D6C5F5',
-      300: '#B79AED',
-      400: '#986FE6',
-      500: '#7944DE',
-      600: '#6136B2',
-      700: '#492985',
-      800: '#301B59',
-      900: '#180E2C',
-    },
-    white: '#FFFFFF',
-    black: '#000000',
-    categories: {
-      cybersecurity: '#2A4F88',
-      'web-development': '#00857e',
-    },
-  },
   typography: {
     heading: {
       1: {
@@ -169,62 +128,82 @@ const theme: Theme = {
 };
 
 export const baseTheme = css`
-  --color-white: #ffffff;
-  --color-black: #000000;
+  --hue: 215;
+  --sat: 100%;
+  --sat-pale: 40%;
 
-  --color-primary-100: #f4f8ff;
-  --color-primary-200: #cbdcf7;
-  --color-primary-300: #9dbbeb;
-  --color-primary-400: #6e9ce4;
-  --color-primary-500: #4582e1;
-  --color-primary-600: #3769b6;
-  --color-primary-700: #2a4f88;
-  --color-primary-800: #1c3459;
-  --color-primary-900: #101c30;
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
 
-  --color-secondary-100: #f4f0fc;
-  --color-secondary-200: #d6c5f5;
-  --color-secondary-300: #b79aed;
-  --color-secondary-400: #986fe6;
-  --color-secondary-500: #7944de;
-  --color-secondary-600: #6136b2;
-  --color-secondary-700: #492985;
-  --color-secondary-800: #301b59;
-  --color-secondary-900: #180e2c;
+  --color-neutral-100: hsl(0, 0%, 98%);
+  --color-neutral-200: hsl(0, 0%, 96%);
+  --color-neutral-300: hsl(0, 0%, 93%);
+  --color-neutral-400: hsl(0, 0%, 85%);
+  --color-neutral-500: hsl(0, 0%, 50%);
+  --color-neutral-600: hsl(0, 0%, 30%);
+  --color-neutral-700: hsl(0, 0%, 20%);
+  --color-neutral-800: hsl(0, 0%, 13%);
+  --color-neutral-900: hsl(0, 0%, 7%);
+
+  --color-primary-100: hsl(var(--hue), var(--sat), 90%);
+  --color-primary-200: hsl(var(--hue), var(--sat), 80%);
+  --color-primary-300: hsl(var(--hue), var(--sat), 70%);
+  --color-primary-400: hsl(var(--hue), var(--sat), 60%);
+  --color-primary-500: hsl(var(--hue), var(--sat), 50%);
+  --color-primary-600: hsl(var(--hue), var(--sat), 40%);
+  --color-primary-700: hsl(var(--hue), var(--sat), 30%);
+  --color-primary-800: hsl(var(--hue), var(--sat), 20%);
+  --color-primary-900: hsl(var(--hue), var(--sat), 10%);
+
+  --color-btn-primary-100: hsl(var(--hue), var(--sat), 40%);
+  --color-btn-primary-200: hsl(var(--hue), var(--sat), 32%);
+  --color-btn-primary-300: hsl(var(--hue), var(--sat), 25%);
+
+  --color-btn-secondary-100: hsl(var(--hue), var(--sat), 30%);
+  --color-btn-secondary-200: hsl(var(--hue), var(--sat), 22%);
+  --color-btn-secondary-300: hsl(var(--hue), var(--sat), 15%);
+
+  --color-link-text-hover: var(--color-primary-800);
+  --color-link-background-hover: var(--color-primary-200);
+  --color-link-background-active: var(--color-primary-300);
+
+  --color-ctg-cybersecurity: hsl(215, 55%, 35%);
+  --color-ctg-web-development: hsl(180, 100%, 35%);
+
+  --color-shadow-100: hsla(0, 0%, 0%, 0.1);
+  --color-shadow-200: hsla(0, 0%, 0%, 0.2);
+  --color-shadow-300: hsla(0, 0%, 0%, 0.3);
 `;
 
 export const lightTheme = css`
-  --color-text-100: #58749e;
-  --color-text-200: #1c3459;
+  --color-bg-100: hsl(0, 0%, 100%);
+  --color-bg-200: hsl(var(--hue), var(--sat), 98%);
+  --color-bg-300: hsl(var(--hue), var(--sat), 96%);
+  --color-bg-400: hsl(var(--hue), var(--sat), 94%);
+  --color-bg-500: hsl(var(--hue), var(--sat), 92%);
 
-  --color-link-text: #7944de;
-  --color-link-text-hover: #301b59;
-  --color-link-background-hover: #d6c5f5;
-  --color-link-background-active: #b79aed;
+  --color-text-100: hsl(var(--hue), var(--sat-pale), 50%);
+  --color-text-200: hsl(var(--hue), var(--sat-pale), 41%);
+  --color-text-300: hsl(var(--hue), var(--sat-pale), 34%);
+  --color-text-400: hsl(var(--hue), var(--sat-pale), 25%);
 
-  --color-background-100: #ffffff;
-  --color-background-200: #f4f8ff;
-  --color-background-300: #e6eefb;
-  --color-background-400: #cbdcf7;
-
-  --color-shadow-100: rgba(0, 0, 0, 0.1);
-  --color-shadow-200: rgba(0, 0, 0, 0.2);
-  --color-shadow-300: rgba(0, 0, 0, 0.3);
+  --color-link-text: var(--color-primary-500);
 `;
 
 export const darkTheme = css`
-  --color-text-100: #95afd9;
-  --color-text-200: #cbdcf7;
+  --color-bg-100: hsl(var(--hue), var(--sat-pale), 10%);
+  --color-bg-200: hsl(var(--hue), var(--sat-pale), 15%);
+  --color-bg-300: hsl(var(--hue), var(--sat-pale), 20%);
+  --color-bg-400: hsl(var(--hue), var(--sat-pale), 25%);
+  --color-bg-500: hsl(var(--hue), var(--sat-pale), 30%);
 
-  --color-link-text: #b79aed;
-  --color-link-text-hover: #301b59;
-  --color-link-background-hover: #d6c5f5;
-  --color-link-background-active: #986fe6;
+  --color-text-100: hsl(var(--hue), var(--sat-pale), 60%);
+  --color-text-200: hsl(var(--hue), var(--sat-pale), 69%);
+  --color-text-300: hsl(var(--hue), var(--sat-pale), 78%);
+  --color-text-400: hsl(var(--hue), var(--sat-pale), 87%);
+  --color-text-500: hsl(var(--hue), var(--sat-pale), 95%);
 
-  --color-background-100: #111928;
-  --color-background-200: #141e2d;
-  --color-background-300: #1c293d;
-  --color-background-400: #213048;
+  --color-link-text: var(--color-primary-200);
 `;
 
 export default theme;

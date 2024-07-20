@@ -28,7 +28,7 @@ export const Button = styled.button`
   cursor: pointer;
   transition: background-color 200ms;
   color: var(--color-white);
-  background-color: var(--color-primary-800);
+  background-color: var(--color-btn-secondary-100);
 
   ${({ theme }) => theme.mediaQueries.md} {
     bottom: 1.5rem;
@@ -38,10 +38,10 @@ export const Button = styled.button`
   &:hover,
   &:focus {
     outline: none;
-    background-color: var(--color-primary-700);
+    background-color: var(--color-btn-secondary-200);
   }
 
   &:active {
-    background-color: var(--color-primary-600);
+    background-color: var(--color-btn-secondary-300);
   }
 `;

@@ -17,7 +17,7 @@ export const HamburgerButton = styled.button<{ $isWhite: boolean }>`
   font-size: 2rem;
   line-height: 2rem;
   color: ${({ $isWhite }) =>
-    $isWhite ? 'var(--color-text-200)' : 'var(--color-white)'};
+    $isWhite ? 'var(--color-text-400)' : 'var(--color-white)'};
 
   &:hover,
   &:focus {
@@ -42,7 +42,7 @@ export const Navigation = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  background-color: var(--color-background-200);
+  background-color: var(--color-bg-200);
 `;
 
 export const SocialsWrapper = styled.div`

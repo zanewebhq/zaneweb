@@ -7,8 +7,8 @@ export const Wrapper = styled(Link)`
   display: flex;
   flex-direction: column;
   border-radius: 0.75rem;
-  color: var(--color-text-200);
-  background-color: var(--color-background-200);
+  color: var(--color-text-400);
+  background-color: var(--color-bg-200);
   overflow: hidden;
   box-shadow: 0 0.5rem 0.75rem -2px var(--color-shadow-100);
   cursor: pointer;
@@ -23,7 +23,7 @@ export const Wrapper = styled(Link)`
   }
 
   &:active {
-    background-color: var(--color-background-300);
+    background-color: var(--color-bg-300);
     box-shadow: 0 0.75rem 1.5rem -2px var(--color-shadow-300);
   }
 
@@ -34,13 +34,13 @@ export const Wrapper = styled(Link)`
 
     &:hover,
     &:focus {
-      outline: 3px solid var(--color-background-400);
+      outline: 3px solid var(--color-bg-400);
       box-shadow: none;
     }
 
     &:active {
       box-shadow: none;
-      background-color: var(--color-background-300);
+      background-color: var(--color-bg-300);
     }
   }
 `;
@@ -51,7 +51,7 @@ export const ImageWrapper = styled.div`
   height: auto;
   aspect-ratio: 16 / 9;
   margin-right: 2rem;
-  background-color: var(--color-background-400);
+  background-color: var(--color-bg-400);
 `;
 
 export const Content = styled.div`
@@ -95,14 +95,14 @@ export const Footer = styled.div`
 `;
 
 export const Date = styled.div`
-  color: var(--color-text-100);
+  color: var(--color-text-200);
 `;
 
 export const ReadMore = styled.div`
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  color: var(--color-primary-500);
+  color: var(--color-link-text);
   text-decoration: none;
   text-transform: uppercase;
   transition: color 200ms;

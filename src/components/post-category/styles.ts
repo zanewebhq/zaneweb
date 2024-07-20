@@ -6,8 +6,7 @@ export const Wrapper = styled.div<{ $category: string }>`
   padding: 0.4rem 0.75rem 0.25rem;
   width: fit-content;
   border-radius: 0.25rem;
-  background-color: ${({ theme, $category }) =>
-    theme.colors.categories[$category]};
+  background-color: ${({ $category }) => `var(--color-ctg-${$category})`};
   font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;

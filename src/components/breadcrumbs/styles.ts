@@ -20,7 +20,7 @@ export const Item = styled.li`
 `;
 
 export const Breadcrumb = styled(Link)`
-  color: var(--color-text-200);
+  color: var(--color-text-400);
   border: none;
 
   &:hover,

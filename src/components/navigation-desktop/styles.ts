@@ -7,7 +7,7 @@ export const Navigation = styled.nav<{ $isWhite: boolean }>`
   width: 100%;
   gap: 1rem;
   color: ${({ $isWhite }) =>
-    $isWhite ? 'var(--color-text-200)' : 'var(--color-white)'};
+    $isWhite ? 'var(--color-text-400)' : 'var(--color-white)'};
 
   ${({ theme }) => theme.mediaQueries.sm} {
     display: flex;

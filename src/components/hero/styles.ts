@@ -58,7 +58,7 @@ export const CTALink = styled(Link)`
   padding: 1rem 2.5rem;
   margin: 2rem auto 0;
   border-radius: 0.5rem;
-  background-color: var(--color-primary-600);
+  background-color: var(--color-btn-primary-100);
   color: var(--color-white);
   font-size: 1rem;
   font-weight: 600;
@@ -74,10 +74,10 @@ export const CTALink = styled(Link)`
   &:hover,
   &:focus {
     outline: none;
-    background-color: var(--color-primary-700);
+    background-color: var(--color-btn-primary-200);
   }
 
   &:active {
-    background-color: var(--color-primary-800);
+    background-color: var(--color-btn-primary-300);
   }
 `;
