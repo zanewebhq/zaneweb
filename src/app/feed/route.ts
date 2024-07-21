@@ -21,8 +21,8 @@ export async function GET() {
   posts.forEach((post) => {
     feed.item({
       title: post.title,
-      guid: `${SITE_URL}/${post.slug}`,
-      url: `${SITE_URL}/${post.slug}`,
+      guid: `${SITE_URL}/blog/${post.slug}`,
+      url: `${SITE_URL}/blog/${post.slug}`,
       date: post.published,
       description: post.description,
       categories: [post.category],
