@@ -176,7 +176,7 @@ export const baseTheme = css`
 `;
 
 export const lightTheme = css`
-  --color-bg-100: hsl(0, 0%, 100%);
+  --color-bg-100: var(--color-white);
   --color-bg-200: hsl(var(--hue), var(--sat), 98%);
   --color-bg-300: hsl(var(--hue), var(--sat), 96%);
   --color-bg-400: hsl(var(--hue), var(--sat), 94%);
@@ -186,6 +186,7 @@ export const lightTheme = css`
   --color-text-200: hsl(var(--hue), var(--sat-pale), 41%);
   --color-text-300: hsl(var(--hue), var(--sat-pale), 34%);
   --color-text-400: hsl(var(--hue), var(--sat-pale), 25%);
+  --color-text-500: hsl(var(--hue), var(--sat-pale), 15%);
 
   --color-link-text: var(--color-primary-500);
 `;
