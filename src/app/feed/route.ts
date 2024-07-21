@@ -6,7 +6,7 @@ export async function GET() {
   const SITE_URL = process.env.SITE_URL;
   const posts = await getPosts();
 
-  if (!SITE_URL) return null;
+  if (!SITE_URL) return new Response('SITE_URL is not set', { status: 500 });
 
   const feed = new RSS({
     title: 'Zane Web',
