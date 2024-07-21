@@ -1,5 +1,5 @@
 import type { MDXComponents } from 'mdx/types';
-import { MDXRemote } from 'next-mdx-remote/rsc';
+import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote/rsc';
 import rehypePrettyCode from 'rehype-pretty-code';
 
 import Link, { LinkProps } from '@/components/link';
@@ -15,6 +15,20 @@ import {
   Strong,
   UnorderedList,
 } from './styles';
+
+const options: MDXRemoteProps['options'] = {
+  mdxOptions: {
+    remarkPlugins: [],
+    rehypePlugins: [
+      [
+        rehypePrettyCode,
+        {
+          theme: 'material-theme-palenight',
+        },
+      ],
+    ],
+  },
+};
 
 const mdxComponents: MDXComponents = {
   h1: (props) => <LinkableHeading level={1} {...props} />,
@@ -52,19 +66,7 @@ export default function MDXRenderer({ source, components }: MDXRendererProps) {
     <MDXRemote
       source={source}
       components={components || mdxComponents}
-      options={{
-        mdxOptions: {
-          remarkPlugins: [],
-          rehypePlugins: [
-            [
-              rehypePrettyCode,
-              {
-                theme: 'material-theme-palenight',
-              },
-            ],
-          ],
-        },
-      }}
+      options={options}
     />
   );
 }

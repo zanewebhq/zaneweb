@@ -1,4 +1,4 @@
-import { FaGithub, FaXTwitter } from 'react-icons/fa6';
+import { FaGithub, FaRss, FaXTwitter } from 'react-icons/fa6';
 
 import { IconLink, Wrapper } from './styles';
 
@@ -19,6 +19,9 @@ export const SocialLinks = () => {
         rel="noopener noreferrer"
       >
         <FaXTwitter title="X" />
+      </IconLink>
+      <IconLink href="/feed" target="_blank" rel="noopener noreferrer">
+        <FaRss title="RSS Feed" />
       </IconLink>
     </Wrapper>
   );
