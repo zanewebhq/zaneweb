@@ -37,7 +37,7 @@ export default async function Hero() {
       <Content>
         <MDXRenderer source={content} components={heroComponents} />
 
-        <CTALink href="#latestPosts">
+        <CTALink href="#latest-posts">
           <span>Read my latest posts</span>
           <MdArrowDownward size={24} />
         </CTALink>

@@ -3,16 +3,11 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import rehypePrettyCode from 'rehype-pretty-code';
 
 import Link, { LinkProps } from '@/components/link';
+import LinkableHeading from '@/components/linkable-heading';
 import PostImage from '@/components/post-image';
 import { PostImage as PostImageType } from '@/utils/posts';
 
 import {
-  Heading1,
-  Heading2,
-  Heading3,
-  Heading4,
-  Heading5,
-  Heading6,
   Italic,
   ListItem,
   OrderedList,
@@ -22,12 +17,12 @@ import {
 } from './styles';
 
 const mdxComponents: MDXComponents = {
-  h1: (props) => <Heading1 {...props} />,
-  h2: (props) => <Heading2 {...props} />,
-  h3: (props) => <Heading3 {...props} />,
-  h4: (props) => <Heading4 {...props} />,
-  h5: (props) => <Heading5 {...props} />,
-  h6: (props) => <Heading6 {...props} />,
+  h1: (props) => <LinkableHeading level={1} {...props} />,
+  h2: (props) => <LinkableHeading level={2} {...props} />,
+  h3: (props) => <LinkableHeading level={3} {...props} />,
+  h4: (props) => <LinkableHeading level={4} {...props} />,
+  h5: (props) => <LinkableHeading level={5} {...props} />,
+  h6: (props) => <LinkableHeading level={6} {...props} />,
   p: (props) => <Paragraph {...props} />,
   strong: (props) => <Strong {...props} />,
   em: (props) => <Italic {...props} />,

@@ -14,7 +14,7 @@ export default async function LatestPosts() {
   });
 
   return (
-    <Wrapper id="latestPosts">
+    <Wrapper id="latest-posts">
       <Heading>Latest posts</Heading>
 
       <Posts>
