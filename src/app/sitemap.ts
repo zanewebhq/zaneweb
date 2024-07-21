@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 import { getContentFromDirectory } from '@/utils/content';
 import { getPosts } from '@/utils/posts';
 
-const URL = 'https://zaneweb.com';
+const URL = process.env.SITE_URL;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const postsContent = await getPosts();
