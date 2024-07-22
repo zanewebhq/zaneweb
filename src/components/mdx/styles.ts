@@ -7,6 +7,7 @@ export const Heading1 = styled.h1`
   font-weight: 600;
   line-height: 120%;
   margin-bottom: 1.25rem;
+  scroll-margin-top: 1rem;
 `;
 
 export const Heading2 = styled.h2`
@@ -14,6 +15,7 @@ export const Heading2 = styled.h2`
   font-weight: 600;
   line-height: 120%;
   margin-bottom: 1.25rem;
+  scroll-margin-top: 1rem;
 `;
 
 export const Heading3 = styled.h3`
@@ -21,6 +23,7 @@ export const Heading3 = styled.h3`
   font-weight: 600;
   line-height: 120%;
   margin-bottom: 1.25rem;
+  scroll-margin-top: 1rem;
 `;
 
 export const Heading4 = styled.h4`
@@ -28,6 +31,7 @@ export const Heading4 = styled.h4`
   font-weight: 600;
   line-height: 120%;
   margin-bottom: 1.25rem;
+  scroll-margin-top: 1rem;
 `;
 
 export const Heading5 = styled.h5`
@@ -35,6 +39,7 @@ export const Heading5 = styled.h5`
   font-weight: 600;
   line-height: 120%;
   margin-bottom: 1.25rem;
+  scroll-margin-top: 1rem;
 `;
 
 export const Heading6 = styled.h6`
@@ -42,6 +47,7 @@ export const Heading6 = styled.h6`
   font-weight: 600;
   line-height: 120%;
   margin-bottom: 1.25rem;
+  scroll-margin-top: 1rem;
 `;
 
 export const Paragraph = styled.p`
