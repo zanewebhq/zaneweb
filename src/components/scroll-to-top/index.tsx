@@ -30,7 +30,7 @@ export default function ScrollToTop() {
   return (
     <Wrapper>
       <Button onClick={scrollToTop}>
-        <FaAngleUp size={32} />
+        <FaAngleUp size={32} title="Scroll to top" />
       </Button>
     </Wrapper>
   );

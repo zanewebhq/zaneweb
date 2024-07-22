@@ -168,7 +168,7 @@ export const baseTheme = css`
   --color-link-background-active: var(--color-primary-300);
 
   --color-ctg-cybersecurity: hsl(215, 55%, 35%);
-  --color-ctg-web-development: hsl(180, 100%, 35%);
+  --color-ctg-web-development: hsl(180, 100%, 25%);
 
   --color-shadow-100: hsla(0, 0%, 0%, 0.1);
   --color-shadow-200: hsla(0, 0%, 0%, 0.2);
