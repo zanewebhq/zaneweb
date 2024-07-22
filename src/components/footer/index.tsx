@@ -7,7 +7,10 @@ export default function Footer() {
   return (
     <Wrapper>
       <Text>
-        © 2024, Built with <Link href="https://nextjs.org/">Next.js</Link>
+        <Link href="/uncopyright">Uncopyrighted</Link> by Martin Zane
+      </Text>
+      <Text>
+        Built with <Link href="https://nextjs.org/">Next.js</Link>
       </Text>
       <SocialLinks />
     </Wrapper>
