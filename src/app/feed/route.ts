@@ -24,7 +24,7 @@ export async function GET() {
       guid: `${SITE_URL}/blog/${post.slug}`,
       url: `${SITE_URL}/blog/${post.slug}`,
       date: post.published,
-      description: post.description,
+      description: `<img src="${SITE_URL}/images/blog/${post.slug}/featured-image.webp" /><p>${post.description}</p>`,
       categories: [post.category],
     });
   });
