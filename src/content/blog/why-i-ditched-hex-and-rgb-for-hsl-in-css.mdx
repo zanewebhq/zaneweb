@@ -1,0 +1,204 @@
+---
+title: 'Why I Ditched Hex and RGB for HSL in CSS'
+description: 'A brief explanation of why I prefer using HSL over Hex and RGB for color values in CSS.'
+category: web-development
+published: 2024-07-23T09:30:00.000Z
+lastModified: 2024-07-23T09:30:00.000Z
+featuredImage:
+  {
+    src: '/images/blog/why-i-ditched-hex-and-rgb-for-hsl-in-css/featured-image.webp',
+    alt: 'A close up shot of hexagonal glitter in various colors.',
+  }
+---
+
+## Introduction
+
+If you're a web developer or a UX designer I can pretty much guarantee you use Hex or RGB (likely exclusively) for your color values. But have you ever considered using an alernative? Did you even know that there are probably a dozen different ways to define and work with colors in CSS? I've yet to try them all, but I have found one that has significant advantages over Hex and RGB: HSL.
+
+Keep reading to find out why I use HSL over Hex and RGB and how you can start using it too.
+
+## What is HSL?
+
+HSL stands for Hue, Saturation, and Lightness. It's a color model that defines colors in terms of those three values. Here's a quick rundown of what each value represents:
+- **Hue**: The base color. It's a value between 0 and 360 that represents the color on the color wheel.
+- **Saturation**: The intensity of the color. A value between 0% and 100% where 0% is grayscale and 100% is full color.
+- **Lightness**: The brightness of the color. A value between 0% and 100% where 0% is black and 100% is white.
+
+In CSS, you use the `hsl(){:css}` or `hsla(){:css}` functions to define colors using the HSL model. Here's an example of how you might define a color using HSL:
+
+```css
+.element {
+  color: hsl(120, 100%, 50%);
+}
+
+.element-with-alpha {
+  color: hsla(120, 100%, 50%, 0.25);
+}
+```
+
+You can play around with an [HSL color picker](https://hslpicker.com/) to get a feel for how the values affect the color.
+
+## The advantages of HSL
+
+As mentioned earlier HSL has some significant advantages over Hex and RGB. Let's take a look at them:
+
+### 1. Readability
+
+HSL is easier to read and understand than Hex or RGB. You can look at an HSL value and have a pretty good idea of what the color will look like. This is especially true for the `hue` value which directly corresponds to a position on the color wheel. See the image below:
+
+<>![A Color wheel showing hue values in a 60-degree increment](/images/blog/why-i-ditched-hex-and-rgb-for-hsl-in-css/color-wheel.webp 'A Color wheel showing hue values in a 60-degree increment')</>
+
+If you just remember those 6 base hue values you can easily read any color value in HSL. Let's consider the following examples:
+
+```css
+.example-1 {
+  color: hsl(165, 100%, 50%);
+}
+
+.example-2 {
+  color: hsl(15, 85%, 65%);
+}
+
+.example-3 {
+  color: hsl(210, 75%, 40%)
+}
+```
+
+In the first example, the hue value is 165 which you know is gonna be a greenish-blue color, because it's between green (120) and cyan (180) on the color wheel. You also know that it's a fully saturated color (100%) and that it's right in the middle of the lightness scale (50%).
+
+Example 2 is going to be a shade of orange, because it's between red (0) and yellow (60) on the color wheel and it's quite saturated (85%) and somewhat bright (65%).
+
+In the last example you know it's going to be a shade of blue, because it's between cyan (180) and blue (240) on the color wheel. It's not fully saturated (75%) and it's a bit darker than the previous examples (40%).
+
+Compare that to some random Hex and RGB values such as:
+  - **#8A2BE2**
+  - **#3A5FCD**
+  - **rgb(118, 199, 192)**
+  - **rgb(255, 215, 0)**
+
+Can you read any of these values? I know I can't.
+
+So with a bit of practice and memorization you can finally start to read color values without having to look them up every time, using HSL.
+
+### 2. Adjustability
+
+HSL makes it easy to adjust colors. If you want to make a color lighter or darker you just need to adjust the lightness value. If you want to make a color more or less intense you adjust the saturation value. And if you want to change the color itself you adjust the hue value.
+
+<>![A graphic showing how easily adjustable HSL color values are](/images/blog/why-i-ditched-hex-and-rgb-for-hsl-in-css/adjustability.png 'A graphic showing how easily adjustable HSL color values are')</>
+
+This is something that you simply can't easily do with Hex or RGB. You're going to have to use a color picker or a similar third-party tool even for the smallest adjustments.
+
+### 3. Design consistency & flexibility
+
+With HSL you can quickly create consistent and flexible color schemes. This is super useful when working on a design system, whether you're a solo developer working on a side-project or part of a team working on a large-scale application.
+
+To demonstrate the power of this feature let's look at how I implemented it on this very website.
+
+I have a base hue and saturation defined that I use for all colors in my theme:
+
+```css
+:root {
+  --hue: 215;
+  --sat: 100%;
+}
+```
+
+I then use this base hue and saturation to define my palette:
+
+```css {5-13}
+:root {
+  --hue: 215;
+  --sat: 100%;
+
+  --color-primary-100: hsl(var(--hue), var(--sat), 90%);
+  --color-primary-200: hsl(var(--hue), var(--sat), 80%);
+  --color-primary-300: hsl(var(--hue), var(--sat), 70%);
+  --color-primary-400: hsl(var(--hue), var(--sat), 60%);
+  --color-primary-500: hsl(var(--hue), var(--sat), 50%);
+  --color-primary-600: hsl(var(--hue), var(--sat), 40%);
+  --color-primary-700: hsl(var(--hue), var(--sat), 30%);
+  --color-primary-800: hsl(var(--hue), var(--sat), 20%);
+  --color-primary-900: hsl(var(--hue), var(--sat), 10%);
+}
+```
+
+As you can see you don't need to be a genius or an artist to do this. I just define my colors in 10% increments of lightness and I get a consistent color scheme that I can use throughout my website. Here's a preview of it:
+
+<>![A preview of my color palette showing 9 colors in 10% increments of lightness](/images/blog/why-i-ditched-hex-and-rgb-for-hsl-in-css/color-palette.png 'A preview of my color palette showing 9 colors in 10% increments of lightness')</>
+
+If I ever want to change the color scheme I can just adjust the base hue and saturation values and all the colors will automatically update. Let's say I wanted to change my website's theme to an orange one. All I need to do is change the base hue (you may have to also adjust the saturation for certain hues):
+
+```css {2}
+:root {
+  --hue: 15;
+}
+```
+
+And just like that I have a brand new color scheme. 
+
+<>![A preview of my color palette after changing the base hue to orange](/images/blog/why-i-ditched-hex-and-rgb-for-hsl-in-css/color-palette-orange.png 'A preview of my color palette after changing the base hue to orange')</>
+
+You can compare it to the current dark theme of the site, which is using a shade of blue. Here's the result:
+
+<>![A screenshot of the home page of this site with the original theme](/images/blog/why-i-ditched-hex-and-rgb-for-hsl-in-css/website-original-palette.png 'A screenshot of the home page of this site with the original theme')</>
+
+<>![A screenshot of the home page of this site with an orange theme](/images/blog/why-i-ditched-hex-and-rgb-for-hsl-in-css/website-orange-palette.png 'A screenshot of the home page of this site with an orange theme')</>
+
+It looks pretty good for a one line change, right?
+
+This is the power of HSL. It allows you to create consistent and flexible color schemes with minimal effort.
+
+### 4. Reusability
+
+Once you have defined a color palette once like we did above, you can easily reuse it in your future projects. All you need to do is copy the the color variables over to your new project change the base hue and saturation, and you're good to go. This can save you a lot of time and effort when starting a new project, so you can focus on the more important stuff.
+
+### 5. Accessibility
+
+HSL makes it easier to create accessible color schemes. Since you can easily adjust the lightness and saturation values you can quickly create color schemes that have enough contrast to be readable.
+
+I personally use the contrast checker from [Coolors](https://coolors.co/contrast-checker) to make sure my color schemes are accessible. Using HSL in the color picker makes it easier to stay stay consistent with the base hue and saturation while adjusting the lightness to meet the contrast requirements.
+
+### 6. Programmability
+
+You can dynamically generate colors and color schemes using HSL. This can be useful in certain scenarios where you need to generate a bunch of colors on the fly.
+Here is a simple example of how you might generate a color scheme using HSL:
+
+```js
+function generateColorScheme(hue, saturation, lightness) {
+  const colors = [];
+
+  for (let i = 0; i < 5; i++) {
+    colors.push(`hsl(${hue}, ${saturation}%, ${lightness + i * 10}%)`);
+  }
+
+  return colors;
+}
+
+const colorScheme = generateColorScheme(200, 50, 50);
+``` 
+
+### 7. Browser Support
+
+HSL has been around for a while and has great browser support. It's supported in all modern browsers and even IE9 and up. Check out the [Can I Use](https://caniuse.com/?search=hsl) page for more details.
+
+## Concerns about HSL
+
+I've heard some concerns about HSL that I want to address:
+
+### 1. Browser Support
+
+Some people have expressed concerns about browser support for HSL in very old browsers such as < IE9. I don't see this as a valid concern at all because I don't think you should be supporting such old browsers in the first place.
+
+### 2. Performance
+
+I've also heard concerns about performance when using HSL. I haven't done any performance testing myself, however I can't imagine that using HSL would have any significant impact on performance. I guess if you're workning on a huge project with thousands and thousands of colors in your CSS it may have some impact, but I doubt it would be noticeable. For most projects I wouldn't worry about it at all.
+
+### 3. Popularity
+
+While in my opinion superior to Hex and RGB, HSL is not as popular. You might have to sell your team or your clients on the idea of using HSL over Hex and RGB. It should be an easy sell though, considering all the advantages I've mentioned above.
+
+## Conclusion
+
+HSL is a powerful and flexible way to define colors in CSS. It has many advantages over Hex and RGB, including readability, adjustability, design consistency, reusability, accessibility, programmability, and great browser support. I highly recommend giving it a try and seeing how it can improve your workflow and your designs.
+
+Thanks for reading! 🫐

@@ -42,6 +42,7 @@ export default function PostImage({
         <Image
           src={src}
           alt={alt}
+          quality={90}
           {...typeProps}
           sizes="(max-width: 48rem) 100vw, 50rem"
         />
