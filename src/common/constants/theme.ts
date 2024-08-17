@@ -169,6 +169,7 @@ export const baseTheme = css`
 
   --color-ctg-cybersecurity: hsl(215, 55%, 35%);
   --color-ctg-web-development: hsl(180, 100%, 25%);
+  --color-ctg-productivity: hsl(30, 100%, 36%);
 
   --color-shadow-100: hsla(0, 0%, 0%, 0.1);
   --color-shadow-200: hsla(0, 0%, 0%, 0.2);
